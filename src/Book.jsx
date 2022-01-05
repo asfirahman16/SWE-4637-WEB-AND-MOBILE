@@ -1,13 +1,16 @@
+import { useState } from "react";
 import "./Book.css";
 
 function Book(props){
-    let vote_count = props.votes;
+    const [vote_count, setVoteCount]=useState(props.votes);
+    //let vote_count = props.votes;
     console.log(props);
     
     function likeHandler(e){
         console.log("clicked " + props.name);
         //props.votes++;
-        vote_count++;
+        //vote_count++;
+        setVoteCount(vote_count+1);
         console.log(vote_count);
     }
 
